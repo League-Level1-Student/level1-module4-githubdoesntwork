@@ -7,6 +7,8 @@ package book_of_illusions;
 
 public class BookOfIllusionsRunner {
 	public static void main(String[] args)  {
-		new BookOfIllusions().run();
+		BookOfIllusions book = new BookOfIllusions();
+		book.run();
+		book.annoy();
 	}
 }

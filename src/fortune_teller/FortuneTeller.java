@@ -33,7 +33,7 @@ public class FortuneTeller extends JPanel implements Runnable, MouseListener {
    	 // 2. Adjust the frameWidth and frameHeight variables to fit your image nicely (doesn’t need a new line of code)
      // 3. Complete the begin() method in the FortuneTellerRunner class
  	 // 4. add a mouse listener to the frame
-
+frame.addMouseListener(this);
     }
 
 
@@ -43,23 +43,39 @@ public class FortuneTeller extends JPanel implements Runnable, MouseListener {
    	 int mouseX = e.getX();
    	 int mouseY = e.getY();
    	 // 5. Print the mouseX variable
-
+System.out.println(mouseX+" ");
    	 // 6. Add the mouseY variable to the previous line so that it prints out too (no new line)
+System.out.print(mouseY);
    	 // 7. Adjust your secret location co-ordinates here:
    	 int secretLocationX = 0;
    	 int secretLocationY = 0;
    	 /** If the mouse co-ordinates and secret location are close, we'll let them ask a question. */
    	 if (areClose(mouseX, secretLocationX) && areClose(mouseY, secretLocationY)) {
    		 // 8. Get the user to enter a question for the fortune teller
-
+JOptionPane.showInputDialog("Ask me a queston!");
    		 // 9. Find a spooky sound and put it in your default package (freesound.org)
-   		 // AudioClip sound = JApplet.newAudioClip(getClass().getResource("creepy-noise.wav"));
+   		 AudioClip sound = JApplet.newAudioClip(getClass().getResource("creepy-noise.wav"));
    		 // 10. Play the sound
-
+sound.play();
    		 // 11. Use the pause() method below to wait until your music has finished
-
+pause(10000);
    		 // 12. Insert your completed Magic 8 ball code here
-
+Random rand = new Random();
+int randInt = rand.nextInt(4);
+System.out.println(randInt);
+JOptionPane.showInputDialog("What is your question!(Yes or no)");
+if(randInt==0) {
+	JOptionPane.showMessageDialog(null, "Yes.");
+}
+if(randInt==1) {
+	JOptionPane.showMessageDialog(null, "No.");
+}
+if(randInt==2) {
+	JOptionPane.showMessageDialog(null, "Ask Gewgol(Avoid Copywrite Strike).");
+}
+if(randInt==3) {
+	JOptionPane.showMessageDialog(null, "I think you need another 8 ball.");
+}
    	 }
 
     }
