@@ -50,17 +50,17 @@ public class Jeopardy implements ActionListener {
 		frame.setLayout(new BorderLayout());
 
 		// 1. Make the frame show up
-
+frame.setVisible(true);
 		// 2. Give your frame a title
-
+frame.setTitle("Title");
 		// 3. Create a JPanel variable to hold the header using the createHeader method
-
+JPanel panel =createHeader("How many letters are there in 'a'?");
 		// 4. Add the header component to the quizPanel
-
+quizPanel.add(panel);
 		// 5. Add the quizPanel to the frame
-
+frame.add(quizPanel);
 		// 6. Use the createButton method to set the value of firstButton
-
+createButton("");
 		// 7. Add the firstButton to the quizPanel
 
 		// 8. Write the code to complete the createButton() method below. Check that your
@@ -93,8 +93,9 @@ public class Jeopardy implements ActionListener {
 	private JButton createButton(String dollarAmount) {
 		
 		// Create a new JButton
-
-		// Set the text of the button to the dollarAmount
+JButton button = new JButton();
+// Set the text of the button to the dollarAmount
+button.setText(dollarAmount);
 
 		// Increment the buttonCount (this should make the layout vertical)
 
