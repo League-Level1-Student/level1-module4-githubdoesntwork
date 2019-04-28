@@ -3,14 +3,13 @@ package extra;
 public class WhackRnner {
 public static void main(String[] args) {
 	Whack wack = new Whack();
-	wack.drawButtons(0);
-	for(int i = 1; i>0;) {
-	if(wack.a==true) {
-		wack.drawButtons(0);
+	wack.drawButtons();
+	while(!(wack.moles==10||wack.failMoles==5)) {
+		if(wack.a) {
+			wack.drawButtons();
+		}
+		System.out.println();
 	}
-	if(wack.moles==10) {
-		break;
-	}
-	}
+	System.exit(0);
 }
 }
