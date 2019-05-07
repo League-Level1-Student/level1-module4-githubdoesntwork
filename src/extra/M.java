@@ -3,7 +3,10 @@ package extra;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import javax.swing.*;
+
 public class M implements KeyListener{
+	static M m = new M();
 static String level1_1="######";
 static String level1_2="#....#";
 static String level1_3="#....#";
@@ -11,6 +14,35 @@ static String level1_4="#....#";
 static String level1_5="######";
 static int x=4,y=2;
 public static void main(String[] args) {
+	JFrame frame = new JFrame("Key Listener");
+	KeyListener listener = new KeyListener() {
+		@Override
+		public void keyTyped(KeyEvent e) {
+		}
+		@Override
+		public void keyPressed(KeyEvent e) {
+			int key = e.getKeyCode();
+			switch(key) {
+			case KeyEvent.VK_W:
+				y++;
+				break;
+			case KeyEvent.VK_S:
+				y--;
+				break;
+			case KeyEvent.VK_D:
+				x++;
+				break;
+			case KeyEvent.VK_A:
+				x--;
+				break;
+			}
+		}
+		@Override
+		public void keyReleased(KeyEvent e) {
+		}
+	};
+	frame.addKeyListener(listener);
+	frame.setVisible(true);
 	while(true) {
 		System.out.println("");
 		System.out.println("");
@@ -57,7 +89,7 @@ if(y==1) {
 	}
 }
 	try {
-		Thread.sleep(300);
+		Thread.sleep(100);
 	} catch (InterruptedException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
@@ -76,10 +108,10 @@ public void keyPressed(KeyEvent e) {
 	int key = e.getKeyCode();
 	switch(key) {
 	case KeyEvent.VK_W:
-		y++;
+		y--;
 		break;
 	case KeyEvent.VK_S:
-		y--;
+		y++;
 		break;
 	case KeyEvent.VK_D:
 		x++;
