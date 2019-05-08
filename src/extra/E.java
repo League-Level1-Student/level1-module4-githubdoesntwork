@@ -12,7 +12,6 @@ import javax.swing.JFrame;
 public class E extends JFrame implements KeyListener{
 	int x=250,y=250;
 	boolean shooting=false;
-	int projectileX=x, projectileY=y;
 	boolean canShoot=false;
 	public E() {
 		setSize(500,500);
@@ -26,19 +25,6 @@ public class E extends JFrame implements KeyListener{
 		g.drawRect(x, y, 30, 30);
 		g.setColor(Color.CYAN);
 		g.fillRect(x, y, 30, 30);
-		if(canShoot) {
-			g.drawRect(x, y, 5, 5);
-			g.setColor(Color.RED);
-			g.fillRect(x, y, 5, 5);
-			projectileX=x;
-			projectileY=y;
-		if(shooting) {
-			projectileY++;
-			g.drawRect(projectileX, projectileY, 5, 5);
-			g.setColor(Color.RED);
-			g.fillRect(x, y, 5, 5);
-		}
-		}
 	}
 
 	@Override
